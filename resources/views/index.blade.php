@@ -9,9 +9,17 @@
 
 <body>
 <h1>let say this is final page before check out page</h1>
-    <form action="{{url('checkout')}}" method="POST">
+    <form id="form" action="{{url('checkout')}}" method="POST">
         @csrf
-        <button>check out proccess</button>
+        <button onclick="jm(event)">check out proccess</button>
     </form>
+    <script>
+        let a =document.getElementById("form");
+        function jm(event){
+            event.preventDefault();
+           if(confirm("are you want to pay ???")) 
+           a.submit();
+        }
+    </script>
 </body>
 </html>
